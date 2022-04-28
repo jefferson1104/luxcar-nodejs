@@ -5,9 +5,7 @@
 
 ```
 
-
-
-## O QUE É SOLID
+### O QUE É SOLID
 São cinco princípios da programação orientada a objetos e design de código criado por Robert C. Martin (ou Uncle Bob) por volta do ano 2000.
 
 S => SRP - Single Responsability Principle (principio da responsabilidade unica)
