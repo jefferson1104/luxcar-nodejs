@@ -13,3 +13,7 @@ São cinco princípios da programação orientada a objetos e design de código 
 - **L** => **LSP** - Liskov Substitution Principle (principio de substituicao de Liskov)
 - **I** => **ISP** - Interface Segregation Principle (principio da segregação de interface)
 - **D** => **DIP** - Dependency Inversion Principle (principio da inversão de dependencia)
+
+
+### Singleton
+É um padrão de projeto que basicamente tem como definição a criação de apenas uma instância de classe, que chamamos de instância global da nossa aplicação. Importante verificar em nosso projeto se a nossa classe realmente precisa ser um singleton, e se ela vai ser instanciada mais de uma vez.
