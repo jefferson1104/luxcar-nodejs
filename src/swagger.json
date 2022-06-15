@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Luxcar Documentation",
+    "description": "This is a Luxcar API",
+    "version": "1.0.0",
+    "contact": {
+      "email": "jefferson1104junior@gmail.com"
+    }
+  }
+}
