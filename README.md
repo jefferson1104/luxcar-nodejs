@@ -33,15 +33,18 @@
   # Delete container
   $ sudo docker rm CONTAINER_ID
 
+  # Verify container ip address 
+  $ sudo docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' CONTAINER_NAME
+
   # View container logs 
-  $ docker logs CONTAINER_NAME
+  $ sudo docker logs CONTAINER_NAME
 
   # Observer container logs 
-  $ docker logs CONTAINER_NAME -f
+  $ sudo docker logs CONTAINER_NAME -f
 
   # Run Dockerfile using docker-compose
-  $ docker-compose up
+  $ sudo docker-compose up
 
   # Run Dockerfile using docker-compose running in background
-  $ docker-compose up -d
+  $ sudo docker-compose up -d
 ```
