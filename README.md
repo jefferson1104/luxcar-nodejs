@@ -41,11 +41,14 @@
   # Observer container logs 
   $ sudo docker logs CONTAINER_NAME -f
 
-  # Run Dockerfile using docker-compose
+  # Run Dockerfile using docker-compose or Start containers
   $ sudo docker-compose up
 
-  # Run Dockerfile using docker-compose running in background
+  # Run Dockerfile using docker-compose in background or Start containers in background
   $ sudo docker-compose up -d
+
+  # Stop containers
+  $ sudo docker-compose stop
 ```
 
 ### TYPEORM COMMANDS
