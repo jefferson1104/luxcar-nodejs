@@ -54,6 +54,7 @@
 ### TYPEORM COMMANDS
 ```bash
   # typeorm script created in package.json
+  "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
 
   # to create migration file
   $ yarn typeorm migration:create -n NAME_MIGRATION
