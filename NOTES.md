@@ -1,6 +1,6 @@
 # NOTES
 
-### DOCKER AND DOCKER-COMPOSE COMMANDS
+## DOCKER AND DOCKER-COMPOSE COMMANDS
 ```bash
   # Create docker image from Dockerfile
   $ sudo docker build -t luxcar . 
@@ -39,7 +39,7 @@
   $ sudo docker-compose stop
 ```
 
-### RUN PROJECT
+## RUN PROJECT
 ```bash
   # install dependencies
   $ yarn
@@ -54,7 +54,7 @@
   http://localhost:3333/api-docs
 ```
 
-### TYPEORM COMMANDS
+## TYPEORM COMMANDS
 ```bash
   # typeorm script created in package.json
   "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
@@ -69,7 +69,7 @@
   $ yarn typeorm migration:revert
 ```
 
-### JEST AND TESTS
+## JEST AND TESTS
 **Unity tests**: test each feature separately
 **Integration tests**: test the entire system flow
 **TDD**: Test Driven Development, test-based software development technique, first develop the test and then make the software so that it passes the test.
