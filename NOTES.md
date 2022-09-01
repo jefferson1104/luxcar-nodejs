@@ -41,14 +41,11 @@
 
 ## RUN PROJECT
 ```bash
-  # install dependencies
-  $ yarn
-
   # create container and up using docker-compose
   $ docker-compose up -d
 
-  # run project in local machine
-  $ yarn dev
+  # run migrations
+  $ yarn typeorm migration:run
 
   # open documentation API 
   http://localhost:3333/api-docs
