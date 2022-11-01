@@ -10,7 +10,7 @@
 **RN**
 - Não deve ser possível cadastrar um carro com uma placa já existente.
 - O carrro deve ser cadastrado com status de disponivel por padrão.
-- * Somente usuário do tipo administrador pode fazer esse cadastro.
+- Somente usuário do tipo administrador pode fazer esse cadastro.
 
 ### Listagem de carro
 **RF**
