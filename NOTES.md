@@ -3,7 +3,7 @@
 ## DOCKER AND DOCKER-COMPOSE COMMANDS
 ```bash
   # Create docker image from Dockerfile
-  $ sudo docker build -t luxcar . 
+  $ sudo docker build -t luxcar .
 
   # Create and run container from image created
   $ sudo docker run -p 3333:3333 luxcar
@@ -20,13 +20,13 @@
   # Delete container
   $ sudo docker rm CONTAINER_ID
 
-  # Verify container ip address 
+  # Verify container ip address
   $ sudo docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' CONTAINER_NAME
 
-  # View container logs 
+  # View container logs
   $ sudo docker logs CONTAINER_NAME
 
-  # Observer container logs 
+  # Observer container logs
   $ sudo docker logs CONTAINER_NAME -f
 
   # Run Dockerfile using docker-compose or Start containers
@@ -47,7 +47,7 @@
   # run migrations
   $ yarn typeorm migration:run
 
-  # open documentation API 
+  # open documentation API
   http://localhost:3333/api-docs
 ```
 
@@ -86,11 +86,20 @@
   ✔ Which provider should be used to instrument code for coverage? › v8
   ✔ Automatically clear mock calls, instances, contexts and results before every test? … yes
 
-  # install preset ts-jest to use jest with typescript 
-  $  yarn add ts-jest -D 
+  # install preset ts-jest to use jest with typescript
+  $  yarn add ts-jest -D
 
   # add the lines below in your jest.config.ts
   preset: "ts-jest",
   testMatch: ["**/*.spec.ts"],
   bail: true,
+```
+
+## USERS
+```json
+USER: jefferson@luxcar.com.br
+PSWD: 123456
+
+USER: jhon.doe@teste.com
+PSWD: 123456
 ```

@@ -25,7 +25,7 @@ describe("Create Car Specification", () => {
 
       await createCarSpecificationUseCase.execute({
         car_id,
-        specifications_id
+        specifications_id,
       });
     }).rejects.toBeInstanceOf(AppError);
   });
@@ -43,14 +43,14 @@ describe("Create Car Specification", () => {
 
     const specification = await specificationsRepositoryInMemory.create({
       description: "test",
-      name: "test"
+      name: "test",
     });
 
     const specifications_id = [specification.id];
 
     const specificationsCars = await createCarSpecificationUseCase.execute({
       car_id: car.id,
-      specifications_id
+      specifications_id,
     });
 
     expect(specificationsCars).toHaveProperty("specifications");
