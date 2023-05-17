@@ -1,7 +1,10 @@
 import { Repository, getRepository } from "typeorm";
+
+import { ICarsImagesRepository } from "@modules/cars/repositories/ICarsImagesRepository";
+
 import { CarImage } from "../entities/CarImage";
 
-class CarsImagesRepository {
+class CarsImagesRepository implements ICarsImagesRepository {
   private repository: Repository<CarImage>;
 
   constructor() {
@@ -9,7 +12,14 @@ class CarsImagesRepository {
   }
 
   async create(car_id: string, image_name: string): Promise<CarImage> {
-    throw new Error("Method not implemented.");
+    const carImage = this.repository.create({
+      car_id,
+      image_name,
+    });
+
+    await this.repository.save(carImage);
+
+    return carImage;
   }
 }
 
