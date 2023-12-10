@@ -98,6 +98,13 @@
   bail: true,
 ```
 
+## DATABASE TEST
+database test name = "luxcar_test"
+```sql
+# create a new database for tests
+$ create database luxcar_test
+```
+
 ## USERS
 ```json
 ADMIN
