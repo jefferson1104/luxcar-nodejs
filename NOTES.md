@@ -37,6 +37,9 @@
 
   # Stop containers
   $ sudo docker-compose stop
+
+  # Logs
+  $ docker logs luxcar -f
 ```
 
 ## RUN PROJECT
@@ -97,9 +100,11 @@
 
 ## USERS
 ```json
+ADMIN
 USER: jefferson@luxcar.com.br
 PSWD: 123456
 
+COSTUMER
 USER: jhon.doe@teste.com
 PSWD: 123456
 ```
