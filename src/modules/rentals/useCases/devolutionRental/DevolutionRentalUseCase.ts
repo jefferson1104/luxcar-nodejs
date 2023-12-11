@@ -56,8 +56,6 @@ class DevolutionRentalUseCase {
 
 		await this.carsRepository.updateAvailable(car.id, true);
 
-		console.log('PASSOU AQUI', rental);
-
 		return rental;
 	}
 }
