@@ -28,19 +28,14 @@ class RefreshTokenUseCase {
 	) {}
 
 	async execute(token: string): Promise<ITokenResponse> {
-		console.log('USE CASE PASSOU AQUI');
-
 		const { email, sub } = verify(token, auth.secret_refresh_token) as IPayload;
-		console.log('EMAIL =>', email);
 
 		const user_id = sub;
-		console.log('USER ID =>', user_id);
 
 		const userToken = await this.usersTokensRepository.findByUserIdAndRefreshToken(
 			user_id,
 			token
 		);
-		console.log('USER TOKEN =>', userToken);
 
 		if (!userToken) {
 			throw new AppError("Refresh Token does not exists!");
@@ -67,8 +62,6 @@ class RefreshTokenUseCase {
 			subject: user_id,
 			expiresIn: auth.expires_in_token,
 		});
-
-		console.log('NEW TOKEN ===>' , newToken);
 
 		return {
 			refresh_token,
