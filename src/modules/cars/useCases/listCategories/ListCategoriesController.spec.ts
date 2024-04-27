@@ -18,7 +18,7 @@ describe("List Category Controller", () => {
 
 		await connection.query(
 			`INSERT INTO USERS(id, name, email, password, driver_license, "isAdmin", created_at)
-			values('${id}', 'admin', 'admin@luxcar.com.br', '${password}', '9988551', true, 'now()')`
+			values('${id}', 'admin', 'admin@luxcar.com', '${password}', '9988551', true, 'now()')`
 		);
 	});
 
@@ -29,7 +29,7 @@ describe("List Category Controller", () => {
 
 	it("Should be able to list all categories", async () => {
 		const responseToken = await request(app).post("/sessions").send({
-			email: "admin@luxcar.com.br",
+			email: "admin@luxcar.com",
 			password: "admin"
 		});
 

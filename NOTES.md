@@ -1,6 +1,7 @@
 # NOTES
 
 ## DOCKER AND DOCKER-COMPOSE COMMANDS
+
 ```bash
   # Create docker image from Dockerfile
   $ sudo docker build -t luxcar .
@@ -43,6 +44,7 @@
 ```
 
 ## RUN PROJECT
+
 ```bash
   # create container and up using docker-compose
   $ docker-compose up -d
@@ -55,6 +57,7 @@
 ```
 
 ## TYPEORM COMMANDS
+
 ```bash
   # typeorm script created in package.json
   "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
@@ -70,6 +73,7 @@
 ```
 
 ## JEST AND TESTS
+
 **Unity tests**: test each feature separately
 **Integration tests**: test the entire system flow
 **TDD**: Test Driven Development, test-based software development technique, first develop the test and then make the software so that it passes the test.
@@ -99,16 +103,19 @@
 ```
 
 ## DATABASE TEST
+
 database test name = "luxcar_test"
+
 ```sql
 # create a new database for tests
 $ create database luxcar_test
 ```
 
 ## USERS
+
 ```json
 ADMIN
-USER: jefferson@luxcar.com.br
+USER: jefferson.junior@luxcar.com
 PSWD: 123456
 
 COSTUMER

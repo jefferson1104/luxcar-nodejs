@@ -9,8 +9,8 @@ async function create() {
   const id = uuidV4();
 
   await connection.query(
-    `INSERT INTO USERS(id, name, email, password, driver_license, "isAdmin", created_at) 
-    values('${id}', 'admin', 'admin@luxcar.com.br', '${password}', '9988551', true, 'now()')`
+    `INSERT INTO USERS(id, name, email, password, driver_license, "isAdmin", created_at)
+    values('${id}', 'admin', 'admin@luxcar.com', '${password}', '9988551', true, 'now()')`
   );
 
   await connection.close();
