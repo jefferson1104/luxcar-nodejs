@@ -1,10 +1,10 @@
+import { hash } from "bcryptjs";
 import request from "supertest";
 import { Connection } from "typeorm";
-import { hash } from "bcryptjs";
 import { v4 as uuidV4 } from "uuid";
 
-import createConnection from "@shared/infra/typeorm";
 import { app } from "@shared/infra/http/app";
+import createConnection from "@shared/infra/typeorm";
 
 let connection: Connection;
 
@@ -30,17 +30,20 @@ describe("Create Category Controller", () => {
 	it("Should be able to create a new category", async () => {
 		const responseToken = await request(app).post("/sessions").send({
 			email: "admin@luxcar.com",
-			password: "admin"
+			password: "admin",
 		});
 
-		const { token } = responseToken.body;
+		const { refresh_token } = responseToken.body;
 
-		const response = await request(app).post("/categories").send({
-			name: "Category Supertest",
-			description: "Category Supertest"
-		}).set({
-			Authorization: `Bearer ${token}`
-		});
+		const response = await request(app)
+			.post("/categories")
+			.send({
+				name: "Category Supertest",
+				description: "Category Supertest",
+			})
+			.set({
+				Authorization: `Bearer ${refresh_token}`,
+			});
 
 		expect(response.status).toBe(201);
 	});
@@ -48,17 +51,20 @@ describe("Create Category Controller", () => {
 	it("Should not be able to create a new category if with name exists", async () => {
 		const responseToken = await request(app).post("/sessions").send({
 			email: "admin@luxcar.com",
-			password: "admin"
+			password: "admin",
 		});
 
-		const { token } = responseToken.body;
+		const { refresh_token } = responseToken.body;
 
-		const response = await request(app).post("/categories").send({
-			name: "Category Supertest",
-			description: "Category Supertest"
-		}).set({
-			Authorization: `Bearer ${token}`
-		});
+		const response = await request(app)
+			.post("/categories")
+			.send({
+				name: "Category Supertest",
+				description: "Category Supertest",
+			})
+			.set({
+				Authorization: `Bearer ${refresh_token}`,
+			});
 
 		expect(response.status).toBe(400);
 	});

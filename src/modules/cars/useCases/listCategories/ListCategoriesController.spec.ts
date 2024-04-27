@@ -1,10 +1,10 @@
+import { hash } from "bcryptjs";
 import request from "supertest";
 import { Connection } from "typeorm";
-import { hash } from "bcryptjs";
 import { v4 as uuidV4 } from "uuid";
 
-import createConnection from "@shared/infra/typeorm";
 import { app } from "@shared/infra/http/app";
+import createConnection from "@shared/infra/typeorm";
 
 let connection: Connection;
 
@@ -30,17 +30,20 @@ describe("List Category Controller", () => {
 	it("Should be able to list all categories", async () => {
 		const responseToken = await request(app).post("/sessions").send({
 			email: "admin@luxcar.com",
-			password: "admin"
+			password: "admin",
 		});
 
-		const { token } = responseToken.body;
+		const { refresh_token } = responseToken.body;
 
-		await request(app).post("/categories").send({
-			name: "Category Supertest",
-			description: "Category Supertest"
-		}).set({
-			Authorization: `Bearer ${token}`
-		});
+		await request(app)
+			.post("/categories")
+			.send({
+				name: "Category Supertest",
+				description: "Category Supertest",
+			})
+			.set({
+				Authorization: `Bearer ${refresh_token}`,
+			});
 
 		const response = await request(app).get("/categories");
 
