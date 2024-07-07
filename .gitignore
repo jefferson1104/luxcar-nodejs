@@ -1,5 +1,8 @@
 # NODE
 /node_modules
+/.env
+./.env
+.env
 
 # TEMP FILES
 /tmp
