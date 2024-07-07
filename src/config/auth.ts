@@ -4,4 +4,4 @@ export default {
 	expires_in_token: "15m", // 15 minutes
 	expires_in_refresh_token: "30d", // 30 days
 	expires_refresh_token_days: 30,
-}
+};
